@@ -3,6 +3,9 @@
 var addButton = document.getElementById("add");
 var taskInput = document.getElementById("new-task");
 var descInput = document.getElementById("new-description");
+var startDate = document.getElementById("start-date");
+var endDate = document.getElementById("end-date");
+var priorityInput = document.getElementById("priority");
 var incompleteTasksHolder = document.getElementById("incomplete-tasks");
 var completeTasksHolder = document.getElementById("completed-tasks");
 
@@ -61,8 +64,11 @@ var addTask = function() {
 };
 
 var deleteTask = function() {
+    console.log(this.nodeName);
     var listItem = this.parentNode;
+    console.log(listItem.nodeName);
     var ul = listItem.parentNode;
+    console.log(ul.nodeName);
     ul.removeChild(listItem);
 };
 
