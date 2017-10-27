@@ -1,3 +1,4 @@
+"use strict";
 //---------------------------VARIABLES-----------------------------
 
 var addButton = document.getElementById("add");
@@ -42,8 +43,8 @@ var createNewListElement = function(taskString, descString) {
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
     listItem.appendChild(editInput);
-    listItem.appendChild(labelDesc);
-    listItem.appendChild(textAreaInput);
+    //listItem.appendChild(labelDesc);
+    //listItem.appendChild(textAreaInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
 
@@ -51,7 +52,9 @@ var createNewListElement = function(taskString, descString) {
 };
 
 var addTask = function() {
+    console.log(taskInput.value);
     if (taskInput.value) {
+        var descInput = {};
         //Create new list item with text from #new-task
         var listItem = createNewListElement(taskInput.value, descInput.value);
         //append list item to incompleteTasksHolder
@@ -97,11 +100,11 @@ var editTask = function() {
 
     if (containsClass) {
         label.innerText = editInput.value;
-        labelDesc.innerText = textarea.value;
+        //labelDesc.innerText = textarea.value;
         editButton.innerText = "Edit";
     } else {
         editInput.value = label.innerText;
-        textarea.value = labelDesc.innerText;
+        //textarea.value = labelDesc.innerText;
         editButton.innerText = "Save";
     }
     listItem.classList.toggle("editMode");
